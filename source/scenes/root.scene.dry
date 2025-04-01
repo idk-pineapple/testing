@@ -21,8 +21,8 @@ on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
 Q.time = 1;
-Q.year = 1928;
-Q.month = 1;
+Q.year = 1918;
+Q.month = 10;
 // how many actions have been taken this month?
 Q.month_actions = 0;
 
@@ -64,6 +64,7 @@ Q.unions_independent = 0;
 Q.centrists_resign = 0;
 Q.left_split = 0;
 Q.reformists_resigned = 0;
+Q.call_to_action = 0;
 
 // have we discovered neorevisionism?
 Q.neorevisionism = 0;
@@ -80,113 +81,87 @@ Q.wtb_support = 0;
 Q.pacifism = 0;
 // Support for democratic reform within the SPD relative to 1928
 Q.democratization = 0;
-// Support for a communist coalition relative to 1928
-Q.communist_coalition = 0;
+// Path - 1: "Staatpolitiker" - Willing to join coalitions, even if non-SPD chancellor - backed by Reform, Labour - Controversial for left
+// 2: "Center" - Willing to form coalitions, but only under an SPD chancellor - backed by Center, non-controversial
+// 3: "Left" - (need to add reason why you would choose this) - refusal to form coalitions with the bourgeois parties - backed by Left - Controversial for Reform, Labour
+Q.path = 1;
 // economic_plan: have we adopted *any* economic plan?
-// 1 - WTB plan, 2 - AfA-bund plan, 3 - radical plan (mass nationalization of industries)
+// 1 - Plan Tarnow-Baade
+// 2 - Rathenau Plan
 Q.economic_plan = 0;
-// have we officially adopted the WTB plan?
-Q.wtb_adopted = 0;
+Q.Rathenau_support = 0;
+Q.TB_support = 0;
 // have we formed the iron front?
 Q.iron_front_formed = 0;
 // people's party support
 Q.peoples_party_support = 0;
-// support for nationalizations
-Q.nationalization_support = 0;
-Q.nationalization_adopted = 0;
-// moderate economic plan
-Q.moderate_plan_support = 0;
-Q.moderate_plan_adopted = 0;
 
 // organizations
 
 // inter-party relations
+// USPD - SPD - Z/BVP/EVLP - DHP - FVP/LVP - NLP - FKRP - DkP - DVLP 
+Q.uspd_relation = 45;
 Q.z_relation = 50;
-Q.kpd_relation = 25;
-Q.ddp_relation = 60;
-Q.dvp_relation = 35;
-// DNVP and NSDAP are invariably hostile
-Q.DNVP_relation = 10;
-Q.NSDAP_relation = 0;
+Q.dhp_relation = 50;
+Q.fvp_relation = 45;
+Q.nlp_relation = 35;
+Q.fkrp_relation = 10;
+Q.dkp_relation = 0;
+Q.dvlp_relation = 0;
 
-Q.kpd_leader = "Thälmann";
-// alternative is the Conciliators as party leader
-Q.kpd_party_leader = "Thälmann";
-Q.z_leader = "Brüning";
-// party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the SPD.
-Q.z_party_leader = "Marx";
-Q.nsdap_leader = "Hitler";
+// Progress towards reunifying with the USPD
+Q.uspd_unification = 0;
+// Progress towards Z becoming interconfessional
+Q.z_interconfessionalism = 0;
+// Z-BVP-EVLP-DHP unification?
+Q.z_federalism = 0;
+// FVP-NLP unification
+Q.liberal_unity = 0;
+Q.dkp_radicalization = 0; 
+//FKRP reunification - 10 is with the DkP, 0 is with the LVP
+Q.fkrp_unification = 5;
 
-// hmm... maybe we can play nice with Hindenburg???
-Q.hindenburg_relation = 25;
+// Relations with King Wilhelm II - necessary for reforms and being in government
+// OHL cannot be removed until relations > influence
+Q.king_relation = 40;
+Q.ohl_influence = 75;
 
+// Does Prussia still have three-class franchise?
+Q.prussia_electoral_reform = 0;
+// Prussia Government
+// WILL ADD LATER
 
-// Does the SPD lead in Prussia?
-Q.spd_prussia = 1;
-// Options: spd, z, dnvp, papen, nsdap
-Q.prussian_government = "SPD";
-
-// The array of forces - paramilitary groups
-// Number of members in 1928 (in thousands)
-// Reichsbanner, stahlhelm, SA, rotfrontkämpferbund
-Q.rb_strength = 2000;
-Q.rb_militancy = 0.01;
-Q.women_in_rb = 0;
-Q.rb_banned = 0;
-Q.sh_strength = 500;
-Q.sh_militancy = 0.5;
-Q.sh_banned = 0;
-Q.sh_banned_prussia = 0;
-Q.sa_strength = 80;
-Q.sa_militancy = 0.5;
-Q.sa_banned = 0;
-Q.sa_banned_prussia = 0;
-Q.rfb_strength = 130;
-Q.rfb_militancy = 0.5;
-Q.rfb_banned = 0;
-Q.rfb_banned_prussia = 0;
-
-Q.interior_police_strength = 50;
-Q.interior_police_militancy = 1;
-Q.interior_police_loyalty = 0.45;
-
-Q.prussian_police_strength = 90;
-Q.prussian_police_militancy = 1;
-Q.prussian_police_loyalty = 0.5;
-
-// strength includes actual military and de facto reserves?
-Q.reichswehr_strength = 100;
-Q.reichswehr_militancy = 5;
-Q.reichswehr_loyalty = 0.2;
+// Military Reform
+Q.heer_strength = 100;
+Q.heer_militancy = 5;
+Q.heer_loyalty = 0.2;
+Q.heer_reforms = 0;
+// Loyalty is necessary to do reforms
 
 // The state of the country
 
 // popular opinion
 // national ideology - on a binary scale
 // nationalism vs internationalism or pacifism or non-nationalism
-Q.nationalism = 60;
+Q.nationalism = 100;
 // socialism vs capitalism
 Q.socialism = 40;
-// pro-republic vs anti-republic
-Q.pro_republic = 59;
+// republicanism vs monarchism
+Q.pro_monarchy = 80;
 
-Q.emergency_rule = 0;
-
-// minimum percentage of votes to be represented in the Reichstag
-Q.electoral_threshold = 0;
-// constitutional reform level
-Q.constitutional_reform = 0;
-// constructive vote of no confidence
+// Proportional Representation
+Q.proportional_rep = 0;
+// Constructive VONC
 Q.constructive_vonc = 0;
-// reduction in presidential powers
-Q.presidential_powers = 0;
-// allows banning of non-constitutional parties
-Q.constitutional_protection = 0;
-Q.kpd_banned = 0;
-Q.nsdap_banned = 0;
+// reduction in royal powers
+Q.royal_powers = 0;
+// Parliamentarization of the cabinet
+Q.parliamentarization = 0;
+// March Reforms
+Q.march_constitution = 0;
 
 // coups and capital strikes happen when you upset the right or the capitalists too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
-// when coup_progress reaches 10 or capital_strike_progress reaches 10, there's a special event that launches the coup.
+// coups can be disabled once military is reformed enough
 Q.coup_progress = 0;
 Q.capital_strike_progress = 0;
 
@@ -226,10 +201,13 @@ Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
+Q.parties = ['spd', 'uspd', 'z', 'fvp', 'nlp', 'dkp', 'dvlp', 'dhp', 'fkrp'];
 
-// TODO: add 'sapd' later on
+
 Q.sapd_formed = 0;
+Q.lvp_formed = 0;
+Q.spd_reunified = 0;
+Q.fkrp_merged = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
