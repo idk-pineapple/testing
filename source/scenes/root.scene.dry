@@ -113,8 +113,6 @@ Q.dvlp_relation = 0;
 Q.uspd_unification = 0;
 // Progress towards Z becoming interconfessional
 Q.z_interconfessionalism = 0;
-// Z-BVP-EVLP-DHP unification?
-Q.z_federalism = 0;
 // FVP-NLP unification
 Q.liberal_unity = 0;
 Q.dkp_radicalization = 0; 
@@ -212,6 +210,8 @@ Q.fkrp_merged = 0;
 
 // time for pain and suffering
 // FPTP constituency simulator
+
+
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
