@@ -210,7 +210,14 @@ Q.fkrp_merged = 0;
 
 // time for pain and suffering
 // FPTP constituency simulator
+// To keep me from having to simulate over 300 constituencies, there will be three categories of constituency
+// 1: Small rural (dominated by conservatives)
+// 2: Small quasi-urban
+// 3: Cities
 
+Q.const_1 = 100;
+Q.const_1_small_workers = 5;
+Q.const_1_small_
 
 
 // Support for party by social group
