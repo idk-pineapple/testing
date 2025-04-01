@@ -209,6 +209,10 @@ Q.lvp_formed = 0;
 Q.spd_reunified = 0;
 Q.fkrp_merged = 0;
 
+
+// time for pain and suffering
+// FPTP constituency simulator
+
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
 Q.workers_spd = 60;
